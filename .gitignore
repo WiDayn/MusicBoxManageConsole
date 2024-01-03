@@ -1,0 +1,6 @@
+appsettings.json
+/obj
+/bin/Debug/net8.0
+/.vs
+/MusicBoxManageConsole.sln
+/MusicBoxManageConsole.csproj

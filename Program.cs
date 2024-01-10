@@ -32,10 +32,14 @@ class Program
         // 解析文件夹名
         var folderName = Path.GetFileName(folderPath);
         var parts = folderName.Split('-');
-        if (parts.Length != 2) throw new FormatException("文件夹名格式不正确");
+        if (parts.Length < 2) throw new FormatException("文件夹名格式不正确");
 
         var artistName = GetSimplified(parts[0].Trim());
         var albumTitle = parts[1].Trim();
+        for(int i = 2; i < parts.Length; i++)
+        {
+            albumTitle += "-" + parts[i].Trim();
+        }
         Console.WriteLine("请输入专辑发行时间（Eg.2023-01-01）:");
         var releaseDateString = Console.ReadLine();
 
